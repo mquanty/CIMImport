@@ -1,0 +1,241 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{33980C23-90B0-4432-9F8B-ED5AC4BD2E83}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>CIMImport</RootNamespace>
+    <AssemblyName>CIMImport</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.EntityFrameworkCore, Version=2.1.4.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.EntityFrameworkCore.2.1.4\lib\netstandard2.0\Microsoft.EntityFrameworkCore.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.EntityFrameworkCore.Abstractions, Version=2.1.4.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.EntityFrameworkCore.Abstractions.2.1.4\lib\netstandard2.0\Microsoft.EntityFrameworkCore.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Caching.Abstractions, Version=2.1.1.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Caching.Abstractions.2.1.1\lib\netstandard2.0\Microsoft.Extensions.Caching.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Caching.Memory, Version=2.1.1.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Caching.Memory.2.1.1\lib\netstandard2.0\Microsoft.Extensions.Caching.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Configuration, Version=2.1.1.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Configuration.2.1.1\lib\netstandard2.0\Microsoft.Extensions.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Configuration.Abstractions, Version=2.1.1.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Configuration.Abstractions.2.1.1\lib\netstandard2.0\Microsoft.Extensions.Configuration.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Configuration.Binder, Version=2.1.1.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Configuration.Binder.2.1.1\lib\netstandard2.0\Microsoft.Extensions.Configuration.Binder.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.DependencyInjection, Version=2.1.1.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.DependencyInjection.2.1.1\lib\net461\Microsoft.Extensions.DependencyInjection.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.DependencyInjection.Abstractions, Version=2.1.1.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.DependencyInjection.Abstractions.2.1.1\lib\netstandard2.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Logging, Version=2.1.1.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Logging.2.1.1\lib\netstandard2.0\Microsoft.Extensions.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Logging.Abstractions, Version=2.1.1.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Logging.Abstractions.2.1.1\lib\netstandard2.0\Microsoft.Extensions.Logging.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Options, Version=2.1.1.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Options.2.1.1\lib\netstandard2.0\Microsoft.Extensions.Options.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Primitives, Version=2.1.1.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Primitives.2.1.1\lib\netstandard2.0\Microsoft.Extensions.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="Remotion.Linq, Version=2.2.0.0, Culture=neutral, PublicKeyToken=fee00910d6e5f53b, processorArchitecture=MSIL">
+      <HintPath>..\packages\Remotion.Linq.2.2.0\lib\net45\Remotion.Linq.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.2.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.4.0\lib\netstandard2.0\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Collections.Immutable, Version=1.2.3.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Collections.Immutable.1.5.0\lib\netstandard2.0\System.Collections.Immutable.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.Annotations, Version=4.2.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ComponentModel.Annotations.4.5.0\lib\net461\System.ComponentModel.Annotations.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Diagnostics.DiagnosticSource, Version=4.0.3.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Diagnostics.DiagnosticSource.4.5.1\lib\net46\System.Diagnostics.DiagnosticSource.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Interactive.Async, Version=3.0.3000.0, Culture=neutral, PublicKeyToken=94bc3704cddfc263, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Interactive.Async.3.1.1\lib\net46\System.Interactive.Async.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Memory, Version=4.0.1.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.5.1\lib\netstandard2.0\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.3.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.4.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.4.5.1\lib\netstandard2.0\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Argument.cs" />
+    <Compile Include="CIMModelCF\_ModelContext.cs" />
+    <Compile Include="CIMModelCF\CIM\CIM_ACLineSegment.cs" />
+    <Compile Include="CIMModelCF\CIM\CIM_Analog.cs" />
+    <Compile Include="CIMModelCF\CIM\CIM_AnalogValue.cs" />
+    <Compile Include="CIMModelCF\CIM\CIM_ApparentPowerLimit.cs" />
+    <Compile Include="CIMModelCF\CIM\CIM_BaseVoltage.cs" />
+    <Compile Include="CIMModelCF\CIM\CIM_Breaker.cs" />
+    <Compile Include="CIMModelCF\CIM\CIM_BusbarSection.cs" />
+    <Compile Include="CIMModelCF\CIM\CIM_Command.cs" />
+    <Compile Include="CIMModelCF\CIM\CIM_ConformLoad.cs" />
+    <Compile Include="CIMModelCF\CIM\CIM_ConnectivityNode.cs" />
+    <Compile Include="CIMModelCF\CIM\CIM_CurrentLimit.cs" />
+    <Compile Include="CIMModelCF\CIM\CIM_Disconnector.cs" />
+    <Compile Include="CIMModelCF\CIM\CIM_Discrete.cs" />
+    <Compile Include="CIMModelCF\CIM\CIM_DiscreteValue.cs" />
+    <Compile Include="CIMModelCF\CIM\CIM_EnergyConsumer.cs" />
+    <Compile Include="CIMModelCF\CIM\CIM_EquivalentInjection.cs" />
+    <Compile Include="CIMModelCF\CIM\CIM_Feeder.cs" />
+    <Compile Include="CIMModelCF\CIM\CIM_Fuse.cs" />
+    <Compile Include="CIMModelCF\CIM\CIM_GeneratingUnit.cs" />
+    <Compile Include="CIMModelCF\CIM\CIM_Ground.cs" />
+    <Compile Include="CIMModelCF\CIM\CIM_GroundDisconnector.cs" />
+    <Compile Include="CIMModelCF\CIM\CIM_Line.cs" />
+    <Compile Include="CIMModelCF\CIM\CIM_LoadBreakSwitch.cs" />
+    <Compile Include="CIMModelCF\CIM\CIM_Location.cs" />
+    <Compile Include="CIMModelCF\CIM\CIM_Model.cs" />
+    <Compile Include="CIMModelCF\CIM\CIM_PositionPoint.cs" />
+    <Compile Include="CIMModelCF\CIM\CIM_PositionPointFormat.cs" />
+    <Compile Include="CIMModelCF\CIM\CIM_PowerTransformer.cs" />
+    <Compile Include="CIMModelCF\CIM\CIM_PowerTransformerEnd.cs" />
+    <Compile Include="CIMModelCF\CIM\CIM_SetPoint.cs" />
+    <Compile Include="CIMModelCF\CIM\CIM_ShuntCompensator.cs" />
+    <Compile Include="CIMModelCF\CIM\CIM_Substation.cs" />
+    <Compile Include="CIMModelCF\CIM\CIM_Switch.cs" />
+    <Compile Include="CIMModelCF\CIM\CIM_SynchronousMachine.cs" />
+    <Compile Include="CIMModelCF\CIM\CIM_TapChanger.cs" />
+    <Compile Include="CIMModelCF\CIM\CIM_Terminal.cs" />
+    <Compile Include="CIMModelCF\CIM\CIM_TransformerWinding.cs" />
+    <Compile Include="CIMModelCF\CIM\CIM_VoltageLevel.cs" />
+    <Compile Include="CIMModelCF\DGM\DGM_BaseBusbarSection.cs" />
+    <Compile Include="CIMModelCF\DGM\DGM_BaseConnectivityNode.cs" />
+    <Compile Include="CIMModelCF\DGM\DGM_BaseLine.cs" />
+    <Compile Include="CIMModelCF\DGM\DGM_BaseServicePoint.cs" />
+    <Compile Include="CIMModelCF\DGM\DGM_BaseSubstation.cs" />
+    <Compile Include="CIMModelCF\DGM\DGM_BaseSwitch.cs" />
+    <Compile Include="CIMModelCF\DGM\DGM_BaseSwitchedCapacitor.cs" />
+    <Compile Include="CIMModelCF\DGM\DGM_BaseTerminalToConnectivityNode.cs" />
+    <Compile Include="CIMModelCF\DGM\DGM_BaseTransformer.cs" />
+    <Compile Include="CIMModelCF\DGM\DGM_Branch.cs" />
+    <Compile Include="CIMModelCF\DGM\DGM_FeederHead.cs" />
+    <Compile Include="CIMModelCF\DGM\DGM_LineElectricalParameter.cs" />
+    <Compile Include="CIMModelCF\DGM\DGM_ModelCase.cs" />
+    <Compile Include="CIMModelCF\DGM\DGM_Node.cs" />
+    <Compile Include="CIMModelCF\DGM\DGM_NodeBranch.cs" />
+    <Compile Include="CIMModelCF\DGM\DGM_Switch.cs" />
+    <Compile Include="CIMModelCF\DGM\DGM_TraceBranch.cs" />
+    <Compile Include="CIMModelCF\DGM\DGM_TraceFeederHead.cs" />
+    <Compile Include="CIMModelCF\DGM\DGM_TraceFeederHeadBusbar.cs" />
+    <Compile Include="CIMModelCF\DGM\DGM_TraceNode.cs" />
+    <Compile Include="CIMModelCF\DGM\DGM_Transformer.cs" />
+    <Compile Include="CIMModelCF\WS_GEO_DataPoint.cs" />
+    <Compile Include="CIMParser\CIMModelLoader.cs" />
+    <Compile Include="CIMParser\CIMModelLoaderResult.cs" />
+    <Compile Include="CIMParser\DefaultXMLHandler.cs" />
+    <Compile Include="CIMParser\ProfileLoader.cs" />
+    <Compile Include="CIMParser\XMLParseError.cs" />
+    <Compile Include="CIMParser\XMLParser.cs" />
+    <Compile Include="CIMParser\XMLParsingManager.cs" />
+    <Compile Include="CIM\Handler\CIMXMLReaderHandler.cs" />
+    <Compile Include="CIM\Handler\IHandler.cs" />
+    <Compile Include="CIM\Handler\RDFSXMLReaderHandler.cs" />
+    <Compile Include="CIM\Manager\AssemblyManager.cs" />
+    <Compile Include="CIM\Manager\FileManager.cs" />
+    <Compile Include="CIM\Manager\StringManipulationManager.cs" />
+    <Compile Include="CIM\ModelCompare\CIMCompareMap.cs" />
+    <Compile Include="CIM\ModelCompare\CIMEntity.cs" />
+    <Compile Include="CIM\ModelCompare\CIMEntityDifference.cs" />
+    <Compile Include="CIM\ModelCompare\CIMModelSets.cs" />
+    <Compile Include="CIM\ModelDifference\CIMDifference.cs" />
+    <Compile Include="CIM\Model\Builder\ConcreteModelBuilder.cs" />
+    <Compile Include="CIM\Model\Builder\ConcreteModelBuildingResult.cs" />
+    <Compile Include="CIM\Model\CIMConstants.cs" />
+    <Compile Include="CIM\Model\CIMModel.cs" />
+    <Compile Include="CIM\Model\CIMModelContext.cs" />
+    <Compile Include="CIM\Model\CIMObject.cs" />
+    <Compile Include="CIM\Model\ConcreteModel.cs" />
+    <Compile Include="CIM\Model\ObjectAttribute.cs" />
+    <Compile Include="CIM\Model\Profile.cs" />
+    <Compile Include="CIM\Model\ProfileElement.cs" />
+    <Compile Include="CIM\Model\ProfileElementStereotype.cs" />
+    <Compile Include="CIM\Model\Reader\BasicConversions.cs" />
+    <Compile Include="CIM\Model\Reader\ObjectModel\CAssociation.cs" />
+    <Compile Include="CIM\Model\Reader\ObjectModel\CAttribute.cs" />
+    <Compile Include="CIM\Model\Reader\ObjectModel\CClass.cs" />
+    <Compile Include="CIM\Model\Reader\ObjectModel\CObjectModel.cs" />
+    <Compile Include="CIM\Model\Reader\ObjectModel\CPackage.cs" />
+    <Compile Include="CIM\Model\Tools\CIMComparer.cs" />
+    <Compile Include="CIM\Model\Tools\ModelElementComparer.cs" />
+    <Compile Include="CIM\Specific\CIMDifferenceXMLHandler.cs" />
+    <Compile Include="CIM\Specific\CIMRDFComparerXMLHandler.cs" />
+    <Compile Include="CIM\Specific\CIMRDFDocumentXMLHandler.cs" />
+    <Compile Include="CIM\Specific\CIMRDFObjectXMLHandler.cs" />
+    <Compile Include="CIM\Util\CodeDOMUtil.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
