@@ -1098,9 +1098,6 @@ namespace CIMImport
                 File.WriteAllText("logfile.txt", log);
             }
 
-            //Console.WriteLine("press any key to continue....");
-            //Console.ReadKey();
-            //CIMModelLoaderResult modelLoadResult2 = CIMModelLoader.LoadCIMXMLModel(null, filePath, out CIMModel cimModel2); //ProfileManager.Namespace
         }
 
         private static Dictionary<string, Dictionary<string, Dictionary<string, string>>> FindWindingsFromTrafo(CIMModel cim)
@@ -1446,86 +1443,3 @@ namespace CIMImport
         }
     }
 }
-
-//static void ConvertCIMXMLToDMSNetworkModelDelta()
-//{
-//    ////SEND CIM/XML to ADAPTER
-//    try
-//    {
-//        //MessageBox.Show("Must enter CIM/XML file.", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
-//        string log;
-//        using (FileStream fs = File.Open(filePath, FileMode.Open))
-//        {
-//            nmsDelta = adapter.CreateDelta(fs, selectedProfile, out log); /*(SupportedProfiles)profileName*/
-//            //richTextBoxReport.Text = log;
-//            File.WriteAllText("logfile.txt", log);
-//        }
-//        if (nmsDelta != null)
-//        {
-//            //// export delta to file
-//            using (XmlTextWriter xmlWriter = new XmlTextWriter("deltaExport.xml", Encoding.UTF8))
-//            {
-//                xmlWriter.Formatting = Formatting.Indented;
-//                nmsDelta.ExportToXml(xmlWriter);
-//                xmlWriter.Flush();
-//            }
-//        }
-//    }
-//    catch (Exception e)
-//    {
-//        Console.WriteLine($"An error occurred.\n\n{e.Message}");
-//    }
-//}
-
-//static void ApplyDMSNetworkModelDelta()
-//{
-//    //// APPLY Delta
-//    if (nmsDelta != null)
-//    {
-//        try
-//        {
-//            string log = adapter.ApplyUpdates(nmsDelta);
-//            //richTextBoxReport.AppendText(log);
-//            File.WriteAllText("logfile.txt", log);
-//            nmsDelta = null;
-//            //buttonApplyDelta.Enabled = (nmsDelta != null);
-//        }
-//        catch (Exception e)
-//        {
-//            Console.WriteLine($"An error occurred.\n\n{e.Message}");
-//        }
-//    }
-//    else
-//    {
-//        Console.WriteLine("No data is imported into delta object.");
-//    }
-//}
-
-
-
-//for entityframework examples
-//using (var db = new cim_import_dbEntities())
-//{
-//    //var ac = new CIM_ACLineSegment { };
-//    //db.CIM_ACLineSegment.Add(ac);
-//    //db.SaveChanges();
-
-//    var query = from b in db.CIM_ACLineSegment
-//                orderby b.ID
-//                select b;
-
-//    Console.WriteLine("All All student in the database:");
-
-//    foreach (var item in query)
-//    {
-//        Console.WriteLine(item.ID + " " + item.IdentifiedObject_aliasName);
-//    }
-
-//    Console.WriteLine("Press any key to exit...");
-//    Console.ReadKey();
-//}
-
-
-
-
-
